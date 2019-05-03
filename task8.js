@@ -1,7 +1,4 @@
-function getName(name) {
-    this.name = name;
-    return this.name;
-}
+'use strict';
 
 const OBJECT_1 = {
     name: 'Vlad'
@@ -9,9 +6,16 @@ const OBJECT_1 = {
 
 const OBJECT_2 = {
 	name : 'Anna'
-}
-console.log(getName(OBJECT_1.name));
-console.log(getName('Vlad'));
+};
 
-console.log(getName(OBJECT_2.name));
-console.log(getName('Anna'));
+const getName = function() {
+	return this.name;
+}
+
+
+	
+console.log(getName.call(OBJECT_1));
+
+
+console.log(getName.call(OBJECT_2));
+

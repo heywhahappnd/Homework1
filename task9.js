@@ -1,13 +1,16 @@
-function getDouble(number) {
-	this.number = number;
+const OBJECT_1 = {
+	number: 5
+};
+
+const getDoubled = function() {
 	return this.number * 2;
 }
 
-function getDoubledTrippled(number) {
-	this.number = number;
-	return this.number * 3;
+const getDoubledTrippled = function() {
+	return getDoubled.call(OBJECT_1) * 3;
 }
 
-console.log(getDoubledTrippled.call(this, getDouble(5)));
-console.log(getDoubledTrippled.call(this, getDouble(2)));
-console.log(getDoubledTrippled.call(this, getDouble(3)));
+
+console.log(getDoubled.call(OBJECT_1));
+
+console.log(getDoubledTrippled());
