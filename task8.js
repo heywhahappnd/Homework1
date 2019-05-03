@@ -10,7 +10,7 @@ const OBJECT_2 = {
 
 const getName = function() {
 	return this.name;
-}
+};
 
 
 	
